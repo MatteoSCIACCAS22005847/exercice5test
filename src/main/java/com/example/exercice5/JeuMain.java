@@ -20,7 +20,7 @@ public class JeuMain extends Application {
         //Acteurs du jeu
         Personnage pacman = new Pacman();
         Personnage fantome = new Fantome();
-        // on positionne le fantôme 20 positions vers la droite
+        // on positionne le fantôme 20 positions vers la droite:
         fantome.setLayoutX(20 * 10);
         //panneau du jeu
         Pane jeu = new Pane();
@@ -63,6 +63,18 @@ public class JeuMain extends Application {
                     j1.deplacerEnHaut();
                     break;
 
+                case Q:
+                    j2.deplacerAGauche();
+                    break;
+                case D:
+                    j2.deplacerADroite(scene.getWidth());
+                    break;
+                case S:
+                    j2.deplacerEnBas(scene.getHeight());
+                    break;
+                case Z:
+                    j2.deplacerEnHaut();
+                    break;
             }
             if (j1.estEnCollision(j2))
                 System.out.println("Collision....");
